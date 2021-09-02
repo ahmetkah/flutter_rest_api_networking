@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'routes/routes.dart';
+import 'views/views.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -23,11 +23,7 @@ class App extends StatelessWidget {
       /// Uygulamanın genel teması
       theme: ThemeData.dark(),
 
-      /// [onGenerateRoute] parametresi:
-      /// Bu parametreye routes\routes.dart sayfasında uygulama boyunca
-      /// kullanacağımız adlandırılmış sayfa rotaları için
-      /// oluşturduğumuz [route()] isimli metodu verdik.
-      onGenerateRoute: Routes.instance!.route,
+      home: const PostsView(),
     );
   }
 }

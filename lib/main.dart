@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
 import 'app.dart';
+import 'providers/providers.dart';
 
 /// [main()] metodu:
 /// Uygulama çalıştırılacağı zaman Flutter ilk olarak bu metodu bulur
@@ -12,10 +15,18 @@ void main() {
   /// [runApp()] metodu:
   /// Uygulamanın kök widgetini çalıştırırarak ekrana görüntü gelmesini sağlar.
   runApp(
-    /// [App] widgeti:
-    /// Widget ağacımızın kökü olan ve bir [MaterialApp] döndürecek olan widgettir.
-    /// Okunurluk açısından bu [App] widgetini app.dart isimli
-    /// ayrı bir dart dosyasında oluşturduk.
-    const App(),
+    /// []: ChangeNotifierProvider’ı Konumlandırdık
+    ChangeNotifierProvider<PostProvider>(
+      create: (context) => PostProvider()..posts,
+
+      ///
+      ///create: (context) => PostProvider()..posts,
+
+      /// [App] widgeti:
+      /// Widget ağacımızın kökü olan ve bir [MaterialApp] döndürecek olan widgettir.
+      /// Okunurluk açısından bu [App] widgetini app.dart isimli
+      /// ayrı bir dart dosyasında oluşturduk.
+      child: const App(),
+    ),
   );
 }

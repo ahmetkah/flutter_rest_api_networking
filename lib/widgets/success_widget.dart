@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '/models/models.dart';
 
-class SuccessPosts extends StatelessWidget {
-  const SuccessPosts({
+class SuccessWidget extends StatelessWidget {
+  const SuccessWidget({
     Key? key,
     required this.posts,
   }) : super(key: key);
